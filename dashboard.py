@@ -42,6 +42,7 @@ select_columns = {"casosAcumulado": "Casos Acumulados",
 # Instanciando o Dash
 
 app = dash.Dash(__name__, external_stylesheets= [dbc.themes.COSMO]) # onde vai ficar acoplado meu dashboard
+server = app.server
 
 fig = px.choropleth_mapbox(df_states_, locations="estado",
     geojson=brazil_states, center={"lat": -16.95, "lon": -47.78}, # https://www.google.com/maps/ -> right click -> get lat/lon
